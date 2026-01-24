@@ -3,4 +3,15 @@
 (scroll-bar-mode -1)
 (load-theme 'manoj-dark t)
 
+
+
+
+(setq make-backup-files nil)
+
+
+
+
+
+
+
 (provide 'basic)
