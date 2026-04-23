@@ -1,0 +1,13 @@
+ls
+cd ~/
+ls
+cd .emacs.d/
+ls
+rm init.el 
+ls
+git status
+git restore init.el
+ls init.el 
+git status
+clear
+ls

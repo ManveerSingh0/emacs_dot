@@ -38,6 +38,17 @@
 (keymap-global-set "C-c i h" #'my/insert_header)
 
 
+(set-face-attribute 'default nil
+		    :font "Geist Mono" 
+		    :height 130)
+
+(set-face-attribute 'variable-pitch nil
+		    :font "Geist Mono" 
+		    :height 130)
+
+(set-face-attribute 'fixed-pitch nil
+		    :font "Geist Mono" 
+		    :height 130)
 
 
 (provide 'basic)
