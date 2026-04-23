@@ -1,0 +1,51 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".google.com"
+  [url-cookie "NID"
+	      "529=B52GcAkCG3hEF8od7H5Fii9ty8rHAbkMWVpmrlpUQxgRrSktv7eBWILOECplhj2FNZH6yl9XG5pBeOgozJedcVPIyf9iyqaFxbEiZpYZ1eOsSQB84BEBPbniU9L4xSiWfumrEuDGXuALwwgzC-_-qRV59mDc8UZUovbSBiTJhz89cprksYlaH2DGagD7RWikBFEDWLa0HptjhXTYOg"
+	      "Thu, 27-Aug-2026 09:14:15 GMT" "/" ".google.com" nil])
+ ("stackoverflow.com"
+  [url-cookie "__cflb" "02DiuFA7zZL3enAQJD3AX8ZzvyzLcaG7vfthFansyqc1S"
+	      "Mon, 09-Mar-26 11:55:44 GMT" "/" "stackoverflow.com"
+	      nil]))
+)
+(setq url-cookie-secure-storage
+ '((".youtube.com"
+  [url-cookie "__Secure-YNID"
+	      "16.YT=hfKLe3_Jp4U_pP0N3XII3dwfgltUb8RvaeRY_qw5OJ6WV2DVeLWZQW6069xPPTWadBthnUBr0scCllQKGjhO4OYbQd0HqsLccOf5oanLFqr5V4HPzk8bPYQBW_vWDv2N4GZejYflwgbTCxh_rDYOu3lfVhPgPrWGSe1bcO0rlfLBB4IH6_rjzF8QeU2mUoWTr-OZ4QAbSZwaKvQ3hNfUDVd90f03gWeHf5dwp3m1NYF3PwywgVepyGl58Cy8SbG_g2kX5csezKKxuuD67pc5hc1L8NoDqe-IQX05JkjjyMitidUzdXzq1R2ZZcoRSK4a2rkphZWqBxlmMaRPsxSX4w"
+	      "Fri, 28-Aug-2026 04:32:30 GMT" "/" ".youtube.com" t]
+  [url-cookie "VISITOR_INFO1_LIVE" "IBhdLXJUTaM"
+	      "Fri, 28-Aug-2026 04:32:35 GMT" "/" ".youtube.com" t]
+  [url-cookie "VISITOR_PRIVACY_METADATA" "CgJJThIEGgAgWQ%3D%3D"
+	      "Fri, 28-Aug-2026 04:32:35 GMT" "/" ".youtube.com" t])
+ (".ibm.com"
+  [url-cookie "_abck"
+	      "A2C266018F9ECE6D8605503931CB4DED~-1~YAAQXYksMZZLBZ2cAQAA5k8AqQ/YtD76kYRJZZKmHM8HRnC6jw4mL8rhhgkj3vcbuPhugVWoG5wymMJ7w6KgBRLXYnvBUBgl0uI0c5ODY/NcHtYjCI3woM72/Tj8uP7L/TqOTBRZi5pivX8Qt7clU9w2Tjitrtp8ml8lEo8Q/MUXb5PnnOhNpAlrUjeNBunWe2T+b+pQ1sUkcUtZ5NUbBJ1dG9bd9OwLGi2W2pBhP/TwahtEUmie6uzirQFk9S5Juu99AjuieLFlneXDjdB9/KnOyCzwCB3wZJLT/z9u9+aRfvXf1SKS9Nuc+stmnabGvum1GN6OdkFmGuBQBzv5i0VdwoeAXKUxNTHl9aO5a4uNJh1tsB49r1nFz+h6n6CuQBns6IlVS7Aa5ua1wVlNGH2O8jEt5x7HSf74eFfgeUKPb8ngMc40zxBVrSZvZnZVz1c=~-1~-1~-1~-1~-1"
+	      "Mon Mar 01 10:44:55 2027 GMT" "/" ".ibm.com" t])
+ ("youtube.com"
+  [url-cookie "__Secure-ROLLOUT_TOKEN"
+	      "CPqw07LsvOjaRxCWsMyq7_2SAxiy9fas7_2SAw%3D%3D"
+	      "Fri, 28-Aug-2026 04:32:35 GMT" "/" "youtube.com" t])
+ (".stackoverflow.com"
+  [url-cookie "prov" "62f87f5b-4cd3-47d3-b758-f4aded31327e"
+	      "Mon, 08 Mar 2027 12:55:44 GMT" "/" ".stackoverflow.com"
+	      t]
+  [url-cookie "__cf_bm"
+	      "WeLsnfq.oZn5f6A4iPrjgkJyfg2aP2z41DokyU7q6.o-1772974544-1.0.1.1-6h59Pf5ys8q7Z0bBIW6PuxfgDYVqc9qC5dSw9rKzK75Y9nEush4baACHpwusJnygHsGPsoqBFN8Ii9OhKkGzXzMom09qG2g3yDvQuydcBjU"
+	      "Sun, 08-Mar-26 13:25:44 GMT" "/" ".stackoverflow.com" t])
+ ("github.com"
+  [url-cookie "_octo" "GH1.1.1224716176.1772009901"
+	      "Thu, 25 Feb 2027 08:58:21 GMT" "/" "github.com" t]
+  [url-cookie "logged_in" "no" "Thu, 25 Feb 2027 08:58:21 GMT" "/"
+	      "github.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
+;; End:
+
+;;; cookies ends here

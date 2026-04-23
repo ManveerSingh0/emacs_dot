@@ -1,20 +1,20 @@
+;;Variables 
+(setq-default electric-indent-mode nil)
+
+
+
 (use-package eglot
   :hook
-  (c++-mode . eglot-ensure))
+  (c++-mode . eglot-ensure)
+  (python-mode . eglot-ensure))
 
-(use-package corfu
+
+(use-package company
   :ensure t
-  ;; :init
-  ;; (global-corfu-mode)
   :hook
-  ((c++-mode . corfu-mode)) 
-  :config
-  (corfu-popupinfo-mode t)
-  :custom
-  (corfu-auto t)
-  (corfu-auto-delay 0.1)
-  (corfu-auto-prefix 1))
-
+  (c++-mode . company-mode)
+  (python-mode . company-mode)
+  (elisp-mode . company-mode))
 
 
 (use-package orderless
@@ -63,6 +63,11 @@
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 
 
+(use-package transient
+  :ensure t)
+
+(use-package magit
+  :ensure t)
 
 
 

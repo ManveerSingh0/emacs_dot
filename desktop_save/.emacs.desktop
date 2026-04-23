@@ -1,0 +1,139 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Mar  1 09:19:16 2026
+;; Desktop file format version 208
+;; Emacs version 30.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (27043 46908 442436 217000) (desktop . "208") "manveer@fedora" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-UKWN-Adwaita Mono-regular-normal-normal-*-15-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#CEDBE5") (background-color . "#0D0E16") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (alpha-background) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#D85F00") (font-parameter) (environment) (sticky) (last-focus-update . t) (frameset--id . "A47C-ED05-4DED-0455") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . "wayland-0") (explicit-name) (user-size . t) (height . 50) (width . 211) (left . 0) (top . 0)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 80) (min-pixel-width . 180) (min-pixel-height-ignore . 40) (min-pixel-width-ignore . 72) (min-pixel-height-safe . 20) (min-pixel-width-safe . 36)) hc (pixel-width . 1920) (pixel-height . 991) (total-width . 213) (total-height . 50) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 957) (pixel-height . 991) (total-width . 106) (total-height . 50) (normal-height . 1.0) (normal-width . 0.5) (buffer "basic.el" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 179) (start . 1)) (prev-buffers ("pre_calculus.pdf" 1 59623821) ("main.cpp" 1 624) ("gtk_app" 1 190) ("programming" 1 539) ("networking" 1 1) ("server.cpp" 1 110) ("*eww*" 1 41))) (leaf (last . t) (pixel-width . 963) (pixel-height . 991) (total-width . 107) (total-height . 50) (normal-height . 1.0) (normal-width . 0.5) (buffer "absolute_value.png" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("pre_calculus.pdf" 1 59623821)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("directory" "^" #("youtube sc" 0 10 (isearch-case-fold-search t isearch-regexp-function nil)) #("ideas" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("ided" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("wate" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("270" 0 3 (isearch-case-fold-search t isearch-regexp-function nil)) "inv" #("website_design" 0 14 (isearch-case-fold-search t isearch-regexp-function nil)) #("doom" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("emacs" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("filetags" 0 8 (isearch-case-fold-search t isearch-regexp-function nil)) "tags" #("annotation" 0 10 (isearch-case-fold-search t isearch-regexp-function nil)) #("annotations" 0 11 (isearch-case-fold-search t isearch-regexp-function nil)) #("page" 0 4 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/elisp/basic.el" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png" "/media/hardisk/study_documents/pre_calculus.pdf" "~/programming/gtk_app/main.cpp" "~/programming/gtk_app" "~/programming/networking/" "~/programming/networking/server.cpp" "/media/hardisk/second_brain/images/samurai_banner.png" "~/.emacs.d/elisp/second_brain.el" "/media/hardisk/second_brain/" "~/programming/networking/server.cpp" "/media/hardisk/study_documents/unix_netprog_v1.pdf" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/second_brain/20260220214910-zuhitsu.org" "/media/hardisk/second_brain/20260220215010-resources.org" "~/.emacs.d/elisp/second_brain.el" "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png" "~/.emacs.d/elisp/lsp_mode.el" "/media/hardisk/study_documents/unix_netprog_v1.pdf" "/media/hardisk/bills/sales_bill.pdf" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png" "/media/hardisk/study_documents/pre_calculus.pdf" "~/programming/networking/server.cpp" "~/.emacs.d/elisp/second_brain.el" "/media/hardisk/second_brain/" "~/.emacs.d/elisp/lsp_mode.el" "/media/hardisk/study_documents/unix_netprog_v1.pdf" "~/.emacs.d/elisp/lsp_mode.el" "/media/hardisk/study_documents/unix_netprog_v1.pdf" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png" "/media/hardisk/study_documents/pre_calculus.pdf" "/media/hardisk/study_documents/unix_netprog_v1.pdf" "/media/hardisk/bills/jagdish.pdf" "/media/hardisk/study_documents/unix_netprog_v1.pdf" #("/sudo:root@fedora:/etc/fstab" 6 10 (tramp-default t) 11 17 (tramp-default t)) "~/.emacs.d/elisp/second_brain.el" "~/.emacs.d/init.el" "~/.emacs.d/elisp/lsp_mode.el" "~/programming/networking/server.cpp" "/media/hardisk/second_brain/20260220214910-zuhitsu.org" "/media/hardisk/second_brain/" "~/.emacs.d/elisp/second_brain.el" "~/.emacs.d/elisp/" "~/.emacs.d/elisp/second_brain.el" "~/.emacs.d/init.el" "~/.emacs.d/elisp/org_mode.el" "/media/hardisk/second_brain/" "~/programming/qt/qt_calculator/CMakeLists.txt" "~/programming/qt/qt_calculator/main.cpp" #("/home/manveer/programming/qt/qt_learning/main.cpp" 0 49 (project "~/programming/qt/qt_learning/")) "~/programming/qt/qt_learning/CMakeLists.txt" "~/programming/qt/qt_learning/main.cpp" "~/programming/qt/qt_learning/" "~/programming/qt/qt_calculator/calculator.h" "~/programming/qt/qt_calculator/CMakeLists.txt" "~/programming/qt/qt_calculator/main.cpp" "~/programming/qt_learning/" #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/client.cpp" 0 47 (project "~/programming/networking/")) "~/programming/networking/server.cpp" #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/client.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/client.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/client.cpp" 0 47 (project "~/programming/networking/")) #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) "~/programming/networking/CMakeLists.txt" #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) "~/programming/networking/.gitignore" "~/programming/networking/" #("/home/manveer/programming/networking/server.cpp" 0 47 (project "~/programming/networking/")) "~/programming/networking/" #("/home/manveer/programming/networking/client.cpp" 0 47 (project "~/programming/networking/")) "~/programming/networking/" "~/programming/cpp/main.cpp" "~/.emacs.d/elisp/basic.el" "~/programming/networking/server.cpp" "~/.emacs.d/elisp/lsp_mode.el" "~/programming/networking/server.cpp" "~/.emacs.d/elisp/second_brain.el" "~/.emacs.d/" "~/.emacs.d/elisp/second_brain.el" "~/.emacs.d/init.el" "~/.emacs.d/elisp/lsp_mode.el" "~/programming/networking/server.cpp" "~/programming/networking/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/manveer/.emacs.d/elisp/basic.el"
+  "basic.el"
+  'emacs-lisp-mode
+  '(font-lock-mode eldoc-mode auto-revert-mode)
+  179
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 27043 46907 228835 8000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/media/hardisk/study_documents/pre_calculus.pdf"
+  "pre_calculus.pdf"
+  'pdf-view-mode
+  '(font-lock-mode pdf-view-restore-mode pdf-cache-prefetch-minor-mode pdf-misc-context-menu-minor-mode pdf-sync-minor-mode pdf-annot-minor-mode pdf-misc-menu-bar-minor-mode pdf-misc-size-indication-minor-mode pdf-outline-minor-mode pdf-misc-minor-mode pdf-links-minor-mode pdf-isearch-minor-mode pdf-history-minor-mode pdf-view-dark-minor-mode)
+  59623821
+  '(nil nil)
+  t
+  nil
+  '((buffer-display-time 27043 46893 763964 449000) (buffer-file-coding-system . no-conversion))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/media/hardisk/study_documents/math_formula_precalculus/absolute_value.png"
+  "absolute_value.png"
+  'image-mode
+  '(font-lock-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 27043 46907 228835 198000) (buffer-file-coding-system . no-conversion) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/manveer/programming/gtk_app/main.cpp"
+  "main.cpp"
+  'c++-mode
+  '(eglot-inlay-hints-mode eldoc-mode flymake-mode eglot--managed-mode display-line-numbers-mode font-lock-mode)
+  624
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 27043 46846 872448 703000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1 1 1 1 1 1 1 1))))
+
+(desktop-create-buffer 208
+  nil
+  "gtk_app"
+  'dired-mode
+  '(pdf-occur-dired-minor-mode font-lock-mode)
+  190
+  '(nil nil)
+  t
+  '("/home/manveer/programming/gtk_app/")
+  '((buffer-display-time 27043 45435 348991 790000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "programming"
+  'dired-mode
+  '(pdf-occur-dired-minor-mode font-lock-mode)
+  539
+  '(nil nil)
+  t
+  '("/home/manveer/programming/")
+  '((buffer-display-time 27043 45421 937821 129000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "networking"
+  'dired-mode
+  '(pdf-occur-dired-minor-mode font-lock-mode)
+  1
+  '(553 nil)
+  t
+  '("/home/manveer/programming/networking/")
+  '((buffer-display-time 27043 45374 433738 874000))
+  '((mark-ring (248))))
+
+(desktop-create-buffer 208
+  "/home/manveer/programming/networking/server.cpp"
+  "server.cpp"
+  'c++-mode
+  '(font-lock-mode display-line-numbers-mode flymake-mode)
+  110
+  '(110 nil)
+  nil
+  nil
+  '((buffer-display-time 27043 46016 931356 323000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "*eww*"
+  'eww-mode
+  '(font-lock-mode)
+  41
+  '(nil nil)
+  t
+  '(:history ((:title "ABBREVIATE Definition & Meaning - Merriam-Webster" :url "https://www.merriam-webster.com/dictionary/abbreviate") (:title "" :url "https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.merriam%2Dwebster.com%2Fdictionary%2Fabbreviate&rut=aeba2238efe3387c1001a333056b9215a8c388565527b8fe3b4d73ac3ecb03ca" :point 1) (:title "abrivate meaning at DuckDuckGo" :url "https://html.duckduckgo.com/html/?q=abrivate+meaning" :point 210)) :history-position 0)
+  '((buffer-display-time 27043 45228 472597 199000) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "*info*"
+  'Info-mode
+  '(font-lock-mode isearch-fold-quotes-mode display-line-numbers-mode)
+  9665
+  '(13785 nil)
+  t
+  '("/usr/share/info/ccmode" "Getting Started" ((history ("/usr/share/info/ccmode" "Top" 2135) ("/usr/share/info/ccmode" "Commands" 12934) ("/usr/share/info/ccmode" "Indentation Commands" 16213) ("/usr/share/info/ccmode" "Comment Commands" 19895) ("/usr/share/info/ccmode" "Indentation Commands" 13229) ("/usr/share/info/ccmode" "Commands" 12412) ("/usr/share/info/ccmode" "Getting Started" 9044) ("/usr/share/info/ccmode" "Overview" 6497) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Top" 954) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Top" 1017) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Top" 1017) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Overview" 6298) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Top" 1017) ("/usr/share/info/ccmode" "Introduction" 4216) ("/usr/share/info/ccmode" "Top" 1475) ("dir" "Top" 227))))
+  '((tab-width . 8) (buffer-display-time 27043 46016 931468 694000) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
+  '((mark-ring (10197 10153 1100 9044 14210 13785 9665))))
+

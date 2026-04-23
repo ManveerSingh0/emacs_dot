@@ -2,3 +2,9 @@ auto-save-list/
 eln-cache/
 elpaca/
 *~
+.emacs.desktop
+bookmarks/
+projects/
+tramp/
+transient/
+url/
