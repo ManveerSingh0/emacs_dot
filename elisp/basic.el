@@ -55,9 +55,19 @@
 (use-package dashboard
   :elpaca t
   :config
+  (setq dashboard-footer-messages nil)
+
+  (setq dashboard-banner-logo-title " The world doesn't remember the mistakes you made; it remembers whether you kept walking. And you are walking. A little messy, a little tired — but walking.")
+  (setq dashboard-startup-banner (file-truename "~/.emacs.d/images/jb.png"))
+  (setq dashboard-image-banner-max-height 300)
+  (setq dashboard-image-banner-max-width 300)
+
+
   (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
-  (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
-  (dashboard-setup-startup-hook))
+  (add-hook 'elpaca-after-init-hook #'dashboard-initialize))
+
+(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+
 
 
 
