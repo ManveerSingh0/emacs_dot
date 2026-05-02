@@ -1,5 +1,9 @@
 (setq org-link-file-path-type 'relative)
 
+(setq org-agenda-files (list (file-truename "~/.zuhitsu/20260502191748-todo.org")))
+
+
+
 (use-package org-drill
   :ensure t)
 
@@ -8,7 +12,7 @@
 (use-package org-roam
   :ensure t
   :init
-  (setq org-roam-directory (file-truename "/media/hardisk/second_brain/"))
+  (setq org-roam-directory (file-truename "~/.zuhitsu"))
   :bind
   (("C-c n i" . org-roam-node-insert)
    ("C-c n f" . org-roam-node-find)

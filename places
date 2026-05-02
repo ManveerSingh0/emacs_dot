@@ -1,3 +1,45 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("c:/Users/singh/AppData/Roaming/.emacs.d/elisp/basic.el" . 938)
+(("/home/manveer/.emacs.d/elisp/basic.el" . 1201)
+ ("/home/manveer/.config/hypr/hyprland.conf" . 7275)
+ ("/home/manveer/Pictures/math_formulas-pre_calculus-/"
+  (dired-filename
+   . "/home/manveer/Pictures/math_formulas-pre_calculus-/properties_of_absolute_value_inequalities.png"))
+ ("/home/manveer/.zuhitsu/daily/2026-05-01.org" . 428)
+ ("/home/manveer/programming/multiplayer_shooter/server/server.cpp"
+  . 154)
+ ("/home/manveer/Pictures/Screenshots/" . 146)
+ ("/home/manveer/.zuhitsu/20260220214940-projects.org" . 366)
+ ("/home/manveer/.zuhitsu/20260423102712-magit.org" . 149)
+ ("/home/manveer/programming/magit/first.org" . 30)
+ ("/home/manveer/.zuhitsu/20260227214524-random_ideas.org" . 247)
+ ("/home/manveer/.emacs.d/elisp/lsp_mode.el" . 102)
+ ("/home/manveer/.emacs.d/elisp/my-elpaca.el" . 2447)
+ ("/home/manveer/.emacs.d/init.el" . 144)
+ ("/home/manveer/.bashrc" . 165)
+ ("/home/manveer/Downloads/temp.org" . 1260)
+ ("/home/manveer/Downloads/"
+  (dired-filename . "/home/manveer/Downloads/pre_calculus.pdf"))
+ ("/home/manveer/Pictures/"
+  (dired-filename . "/home/manveer/Pictures/wallpapers"))
+ ("/home/manveer/" (dired-filename . "/home/manveer/Pictures"))
+ ("/home/manveer/programming/multiplayer_shooter/CMakeLists.txt" . 165)
+ ("/home/manveer/programming/cpp/"
+  (dired-filename . "/home/manveer/programming/cpp/server.cpp"))
+ ("/home/manveer/programming/cpp/CMakeLists.txt" . 221)
+ ("/home/manveer/programming/cpp/client.cpp" . 65)
+ ("/home/manveer/programming/cpp/server.cpp" . 1526)
+ ("/home/manveer/.emacs.d/games/snake-scores" . 56)
+ ("/home/manveer/.zuhitsu/" . 128)
+ ("/home/manveer/.emacs.d/elisp/second_brain.el" . 177)
+ ("/home/manveer/.zuhitsu/daily/2026-04-27.org" . 315)
+ ("/home/manveer/.zuhitsu/daily/2026-04-29.org" . 135)
+ ("/home/manveer/.config/waybar/config" . 481)
+ ("/home/manveer/programming/"
+  (dired-filename . "/home/manveer/programming/cpp"))
+ ("/home/manveer/.config/"
+  (dired-filename . "/home/manveer/.config/waybar"))
+ ("/home/manveer/.config/waybar/"
+  (dired-filename . "/home/manveer/.config/waybar/config"))
+ ("/home/manveer/.config/hypr/"
+  (dired-filename . "/home/manveer/.config/hypr/hyprland.conf"))
  ("/sudo:root@fedora:/etc/fstab" . 687))

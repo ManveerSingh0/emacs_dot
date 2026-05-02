@@ -4,7 +4,7 @@
 
 
 
-(require 'elpaca)
+(require 'my-elpaca)
 (require 'basic)
 (require 'lsp_mode)
 (require 'second_brain)

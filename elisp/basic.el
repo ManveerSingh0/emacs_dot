@@ -51,4 +51,14 @@
 		    :height 130)
 
 
+;; use-package with Elpaca:
+(use-package dashboard
+  :elpaca t
+  :config
+  (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+  (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+  (dashboard-setup-startup-hook))
+
+
+
 (provide 'basic)
