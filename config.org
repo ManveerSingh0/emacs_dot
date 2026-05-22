@@ -1,0 +1,139 @@
+#+TITLE: Emacs Config 
+#+STARTUP: overview
+
+
+* Packages to use [50%] 
+- [X] Elpaca
+- [X] Evil Mode
+- [ ] Treemacs
+- [X] Which key
+- [ ] Magit
+- [ ] Consult
+- [ ] Eglot
+- [ ] Corfu
+- [X] Modern Org
+- [X] Org Roam
+
+
+* Core
+** Org Mode 
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook 'org-indent-mode)
+#+END_SRC
+
+
+
+** Emacs
+#+BEGIN_SRC emacs-lisp
+  (which-key-mode 1)
+  (scroll-bar-mode -1) 
+  (menu-bar-mode -1)
+  (tool-bar-mode -1) 
+#+END_SRC
+
+#+RESULTS:
+
+* Keybindings
+#+BEGIN_SRC emacs-lisp
+
+
+#+END_SRC
+
+* Elpaca
+#+BEGIN_SRC emacs-lisp
+    (defvar elpaca-installer-version 0.12)
+  (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
+  (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
+  (defvar elpaca-sources-directory (expand-file-name "sources/" elpaca-directory))
+  (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
+                                :ref nil :depth 1 :inherit ignore
+                                :files (:defaults "elpaca-test.el" (:exclude "extensions"))
+                                :build (:not elpaca-activate)))
+  (let* ((repo  (expand-file-name "elpaca/" elpaca-sources-directory))
+         (build (expand-file-name "elpaca/" elpaca-builds-directory))
+         (order (cdr elpaca-order))
+         (default-directory repo))
+    (add-to-list 'load-path (if (file-exists-p build) build repo))
+    (unless (file-exists-p repo)
+      (make-directory repo t)
+      (when (<= emacs-major-version 28) (require 'subr-x))
+      (condition-case-unless-debug err
+          (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
+                    ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
+                                                    ,@(when-let* ((depth (plist-get order :depth)))
+                                                        (list (format "--depth=%d" depth) "--no-single-branch"))
+                                                    ,(plist-get order :repo) ,repo))))
+                    ((zerop (call-process "git" nil buffer t "checkout"
+                                          (or (plist-get order :ref) "--"))))
+                    (emacs (concat invocation-directory invocation-name))
+                    ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
+                                          "--eval" "(byte-recompile-directory \".\" 0 'force)")))
+                    ((require 'elpaca))
+                    ((elpaca-generate-autoloads "elpaca" repo)))
+              (progn (message "%s" (buffer-string)) (kill-buffer buffer))
+            (error "%s" (with-current-buffer buffer (buffer-string))))
+        ((error) (warn "%s" err) (delete-directory repo 'recursive))))
+    (unless (require 'elpaca-autoloads nil t)
+      (require 'elpaca)
+      (elpaca-generate-autoloads "elpaca" repo)
+      (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
+  (add-hook 'after-init-hook #'elpaca-process-queues)
+  (elpaca `(,@elpaca-order))
+
+  (elpaca elpaca-use-package
+    ;; Enable use-package :ensure support for Elpaca.
+    (elpaca-use-package-mode))
+
+  (elpaca-wait)
+#+END_SRC
+
+* Evil Mode
+#+BEGIN_SRC emacs-lisp
+  (use-package evil
+    :ensure t
+    :config
+    (evil-mode 1)
+    :bind
+    ("C-g" . evil-force-normal-state))
+#+END_SRC
+
+#+RESULTS:
+: [nil 27151 64401 265322 nil elpaca-process-queues nil nil 18000 nil]
+
+* Treemacs
+#+begin_src emacs-lisp
+  
+#+end_src
+* Consult
+#+begin_src emacs-lisp
+  
+#+end_src
+* org-modern
+- Packages that requires update for org-modern
+#+begin_src emacs-lisp 
+  (use-package compat
+    :ensure t)
+#+end_src
+
+- Final 
+#+begin_src emacs-lisp 
+  (use-package org-modern
+    :ensure t
+    :hook
+    (org-mode . org-modern-mode)
+  )
+#+end_src
+
+* org roam
+#+begin_src emacs-lisp 
+  (use-package org-roam
+    :ensure t
+    :config
+    (setq org-roam-directory (file-truename "~/.zuhitsu"))
+    (org-roam-db-autosync-mode)
+    :bind
+    ("C-c n f" . org-roam-node-find)
+    ("C-c n i" . org-roam-node-insert)
+  )
+#+end_src
+
