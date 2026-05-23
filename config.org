@@ -3,9 +3,9 @@
 
 
 
-* Packages to use [88%] 
+* Packages to use [100%] 
 - [X] Elpaca
-- [ ] Treemacs
+- [X] Treemacs
 - [X] Which key
 - [X] Magit
 - [X] Consult
@@ -13,6 +13,8 @@
 - [X] Modern Org
 - [X] Org Roam
 - [X] Vertico
+
+
 
 * Elpaca
 #+BEGIN_SRC emacs-lisp
@@ -61,7 +63,6 @@
 
   (elpaca-wait)
 #+END_SRC
-
 
 
 
