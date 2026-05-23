@@ -2,9 +2,9 @@
 #+STARTUP: overview
 
 
-* Packages to use [88%] 
+* Packages to use [100%] 
 - [X] Elpaca
-- [ ] Treemacs
+- [X] Treemacs
 - [X] Which key
 - [X] Magit
 - [X] Consult
@@ -12,7 +12,7 @@
 - [X] Modern Org
 - [X] Org Roam
 - [X] Vertico
-
+- [ ] PDF Tools
 * Elpaca
 #+BEGIN_SRC emacs-lisp
     (defvar elpaca-installer-version 0.12)
@@ -264,12 +264,15 @@
   ;;        (shell-mode . corfu-mode)
   ;;        (eshell-mode . corfu-mode))
 
+  :hook
+  (c++-mode . corfu-mode) 
+  (c-mode . corfu-mode)
+  (python-mode . corfu-mode)
   :init
 
   ;; Recommended: Enable Corfu globally.  Recommended since many modes provide
   ;; Capfs and Dabbrev can be used globally (M-/).  See also the customization
   ;; variable `global-corfu-modes' to exclude certain modes.
-  (global-corfu-mode)
 
   ;; Enable optional extension modes:
   ;; (corfu-history-mode)
@@ -309,3 +312,19 @@
   )
 #+end_src
 
+* PDF Tools
+#+begin_src emacs-lisp  
+  (use-package pdf-tools
+    :ensure t)
+#+end_src
+
+* Magit
+#+begin_src emacs-lisp
+  (use-package transient
+    :ensure t)
+
+    (use-package magit
+      :ensure t
+      :bind
+      ("C-x g" . magit-status))
+#+end_src
