@@ -85,9 +85,36 @@
   (scroll-bar-mode -1) 
   (menu-bar-mode -1)
   (tool-bar-mode -1) 
+
+
+  (set-face-attribute 'default
+    		    nil
+    		    :height 130)
+
+
+  (setq make-backup-files nil)
+
+  (menu-bar--display-line-numbers-mode-relative)
+  (display-line-numbers-mode)
+
 #+END_SRC
+*** Mode Line Format
+#+begin_src emacs-lisp
+    (setq-default mode-line-format
+        	      (list "%e"
+    		; to the left we have
+    		    mode-line-modified
+    		    " | "
+    		    mode-line-buffer-identification
+
+    		; To the right we have
+    		    'mode-line-format-right-align
+    		    vc-mode
+  		    "    "))
+#+end_src
 
 #+RESULTS:
+| %e | (%1* %1+) |   |   | (%12b) | mode-line-format-right-align | Git:main |   |
 
 * Keybindings
 #+BEGIN_SRC emacs-lisp
@@ -320,7 +347,16 @@
 * PDF Tools
 #+begin_src emacs-lisp  
   (use-package pdf-tools
-    :ensure t)
+    :ensure t
+    :config
+    (pdf-tools-install)
+    (keymap-global-set "M-g g" #'pdf-view-goto-page))
+
+  (use-package pdf-view-restore
+    :ensure t
+    :after pdf-tools
+    :config
+    (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 #+end_src
 
 * Magit
@@ -333,3 +369,20 @@
       :bind
       ("C-x g" . magit-status))
 #+end_src
+
+* Dashboard
+#+begin_src emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (setq dashboard-startup-banner (cons "/home/manveer/Pictures/profile_photo/cat_drinking_coka_cola.png" "/home/manveer/Pictures/profile_photo/null.txt"))
+    (setq dashboard-image-banner-max-height 300)
+    (setq dashboard-footer-messages '(" "))
+
+    ;; don't call dashboard-setup-startup-hook here — it duplicates the hooks below
+    (setq initial-buffer-choice #'dashboard-open)
+    (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+    (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+    (add-hook 'elpaca-after-init-hook #'dashboard-open))
+#+end_src
+
