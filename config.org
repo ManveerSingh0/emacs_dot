@@ -15,7 +15,7 @@
 
 * Elpaca
 #+BEGIN_SRC emacs-lisp
-    (defvar elpaca-installer-version 0.12)
+  (defvar elpaca-installer-version 0.12)
   (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
   (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
   (defvar elpaca-sources-directory (expand-file-name "sources/" elpaca-directory))
@@ -59,6 +59,10 @@
     (elpaca-use-package-mode))
 
   (elpaca-wait)
+
+  (elpaca-no-symlink-mode)
+
+
 #+END_SRC
 
 
@@ -93,23 +97,23 @@
 * Treemacs
 #+begin_src emacs-lisp
   (use-package treemacs
-  :ensure t
-  :defer t
-  :config
-  (treemacs-follow-mode t)
-  (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode 'always)
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t t"   . treemacs)
-        ("C-x t d"   . treemacs-select-directory)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)))
+    :ensure t
+    :defer t
+    :config
+    (treemacs-follow-mode t)
+    (treemacs-filewatch-mode t)
+    (treemacs-fringe-indicator-mode 'always)
+    :bind
+    (:map global-map
+          ("M-0"       . treemacs-select-window)
+          ("C-x t t"   . treemacs)
+          ("C-x t d"   . treemacs-select-directory)
+          ("C-x t B"   . treemacs-bookmark)
+          ("C-x t C-t" . treemacs-find-file)))
 
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
+  (use-package treemacs-magit
+    :after (treemacs magit)
+    :ensure t)
 #+end_src
 * Consult
 #+begin_src emacs-lisp
@@ -212,7 +216,7 @@
     ;; Optionally make narrowing help available in the minibuffer.
     ;; You may want to use `embark-prefix-help-command' or which-key instead.
     ;; (keymap-set consult-narrow-map (concat consult-narrow-key " ?") #'consult-narrow-help)
-  )
+    )
 #+end_src
 
 * Vertico
@@ -248,33 +252,33 @@
   (use-package corfu
     :ensure t
     ;; Optional customizations
-  :custom
-  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  (corfu-auto t)
-  (corfu-auto-delay 0.1)
-  (corfu-auto-prefix 1)
-  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-  ;; (corfu-on-exact-match 'insert) ;; Configure handling of exact matches
+    :custom
+    (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+    (corfu-auto t)
+    (corfu-auto-delay 0.1)
+    (corfu-auto-prefix 1)
+    ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+    ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+    ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+    ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+    ;; (corfu-on-exact-match 'insert) ;; Configure handling of exact matches
 
-  ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
-  ;; :hook ((prog-mode . corfu-mode)
-  ;;        (shell-mode . corfu-mode)
-  ;;        (eshell-mode . corfu-mode))
+    ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
+    ;; :hook ((prog-mode . corfu-mode)
+    ;;        (shell-mode . corfu-mode)
+    ;;        (eshell-mode . corfu-mode))
 
-  :init
+    :init
 
-  ;; Recommended: Enable Corfu globally.  Recommended since many modes provide
-  ;; Capfs and Dabbrev can be used globally (M-/).  See also the customization
-  ;; variable `global-corfu-modes' to exclude certain modes.
-  (global-corfu-mode)
+    ;; Recommended: Enable Corfu globally.  Recommended since many modes provide
+    ;; Capfs and Dabbrev can be used globally (M-/).  See also the customization
+    ;; variable `global-corfu-modes' to exclude certain modes.
+    (global-corfu-mode)
 
-  ;; Enable optional extension modes:
-  ;; (corfu-history-mode)
-  ;; (corfu-popupinfo-mode)
-  )
+    ;; Enable optional extension modes:
+    ;; (corfu-history-mode)
+    ;; (corfu-popupinfo-mode)
+    )
 
 #+end_src
 
@@ -293,7 +297,7 @@
     :ensure t
     :hook
     (org-mode . org-modern-mode)
-  )
+    )
 #+end_src
 
 * org roam
@@ -301,11 +305,24 @@
   (use-package org-roam
     :ensure t
     :config
-    (setq org-roam-directory (file-truename "~/.zuhitsu"))
+    (setq org-roam-directory (file-truename "d:/second_brain"))
     (org-roam-db-autosync-mode)
     :bind
     ("C-c n f" . org-roam-node-find)
     ("C-c n i" . org-roam-node-insert)
-  )
+    )
 #+end_src
 
+* Pdf Tools
+#+begin_src emacs-lisp
+  (use-package pdf-tools
+  :ensure t
+  :defer t
+  :commands (pdf-tools-install)
+  :mode ("\\.pdf\\'" . pdf-view-mode)
+  :config
+  ;; Automatically build/update the epdfinfo server without asking
+  (pdf-tools-install :no-query)
+  ;; Optional settings
+  (setq-default pdf-view-display-size 'fit-page))
+#+end_src
