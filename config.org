@@ -94,27 +94,67 @@
 
   (setq make-backup-files nil)
 
+;; Set UTF-8 as the default coding system everywhere
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
   (menu-bar--display-line-numbers-mode-relative)
   (display-line-numbers-mode)
 
 #+END_SRC
+
+#+RESULTS:
+: t
+
 *** Mode Line Format
 #+begin_src emacs-lisp
+
+  (defun dynamic-vc-mode ()
+      (when (and vc-mode buffer-file-name)
+        (let* ((backend (vc-backend buffer-file-name))
+  	     (state (vc-state buffer-file-name backend))
+  	     (vc-str (substring vc-mode (+ 2 (length (symbol-name backend))))))
+
+  	(cond
+  	 ((memq state '(edited needs-update))
+  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#ff5555" :weight bold))
+  	  )
+
+  	 ((eq state 'added)
+  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#50fa7b")))
+
+
+  	 (t
+  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#6272a4")))
+  	 ))
+        ))
+
+  (defvar-local my-mode-line-vc
+      '(:eval (dynamic-vc-mode)))
+
+  (put 'my-mode-line-vc 'risky-local-variable t)
+
+
     (setq-default mode-line-format
         	      (list "%e"
     		; to the left we have
-    		    mode-line-modified
+    		    'mode-line-modified
     		    " | "
-    		    mode-line-buffer-identification
-
+    		    'mode-line-buffer-identification
+    		    " | "
+    		    
     		; To the right we have
     		    'mode-line-format-right-align
-    		    vc-mode
-  		    "    "))
+    		    'mode-line-position
+  		    " | "
+  		    'my-mode-line-vc
+    		    "    "))
 #+end_src
 
 #+RESULTS:
-| %e | (%1* %1+) |   |   | (%12b) | mode-line-format-right-align | Git:main |   |
+| %e | mode-line-modified |   |   | mode-line-buffer-identification |   |   | mode-line-format-right-align | mode-line-position |   |   | my-mode-line-vc |   |
 
 * Keybindings
 #+BEGIN_SRC emacs-lisp
