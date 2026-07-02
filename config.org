@@ -117,19 +117,7 @@
   	     (state (vc-state buffer-file-name backend))
   	     (vc-str (substring vc-mode (+ 2 (length (symbol-name backend))))))
 
-  	(cond
-  	 ((memq state '(edited needs-update))
-  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#ff5555" :weight bold))
-  	  )
-
-  	 ((eq state 'added)
-  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#50fa7b")))
-
-
-  	 (t
-  	  (propertize (format "  %s " vc-str) 'face '(:foreground "#6272a4")))
-  	 ))
-        ))
+  	(propertize (format "✏️ %s " vc-str) 'face '(:foreground "" :weight bold)))))
 
   (defvar-local my-mode-line-vc
       '(:eval (dynamic-vc-mode)))
@@ -143,18 +131,17 @@
     		    'mode-line-modified
     		    " | "
     		    'mode-line-buffer-identification
-    		    " | "
     		    
     		; To the right we have
     		    'mode-line-format-right-align
     		    'mode-line-position
   		    " | "
   		    'my-mode-line-vc
-    		    "    "))
+    		    "  "))
 #+end_src
 
 #+RESULTS:
-| %e | mode-line-modified |   |   | mode-line-buffer-identification |   |   | mode-line-format-right-align | mode-line-position |   |   | my-mode-line-vc |   |
+| %e | mode-line-modified |   |   | mode-line-buffer-identification | mode-line-format-right-align | mode-line-position |   |   | my-mode-line-vc |   |
 
 * Keybindings
 #+BEGIN_SRC emacs-lisp
