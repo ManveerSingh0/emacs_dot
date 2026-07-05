@@ -12,11 +12,11 @@
 - [X] Modern Org
 - [X] Org Roam
 - [X] Vertico
-- [X] PDF Tools
+
 
 * Elpaca
 #+BEGIN_SRC emacs-lisp
-  (defvar elpaca-installer-version 0.12)
+    (defvar elpaca-installer-version 0.12)
   (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
   (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
   (defvar elpaca-sources-directory (expand-file-name "sources/" elpaca-directory))
@@ -60,10 +60,7 @@
     (elpaca-use-package-mode))
 
   (elpaca-wait)
-
   (elpaca-no-symlink-mode)
-
-
 #+END_SRC
 
 
@@ -93,24 +90,54 @@
 
   (setq make-backup-files nil)
 
+;; Set UTF-8 as the default coding system everywhere
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
   (menu-bar--display-line-numbers-mode-relative)
   (display-line-numbers-mode)
 
 #+END_SRC
+
+#+RESULTS:
+: t
+
 *** Mode Line Format
 #+begin_src emacs-lisp
-  (setq-default mode-line-format
-      	      (list "%e"
-  		; to the left we have
-  		    mode-line-modified
-  		    " | "
-  		    mode-line-buffer-identification
 
-  		; To the right we have
-  		    'mode-line-format-right-align
-  		    'mode-line-position
-  		    "    "))
+  (defun dynamic-vc-mode ()
+      (when (and vc-mode buffer-file-name)
+        (let* ((backend (vc-backend buffer-file-name))
+  	     (state (vc-state buffer-file-name backend))
+  	     (vc-str (substring vc-mode (+ 2 (length (symbol-name backend))))))
+
+  	  (propertize (format " ✏️ %s " vc-str) 'face '(:foreground "" :weight bold)))))
+
+  (defvar-local my-mode-line-vc
+      '(:eval (dynamic-vc-mode)))
+
+  (put 'my-mode-line-vc 'risky-local-variable t)
+
+
+    (setq-default mode-line-format
+        	      (list "%e"
+    		; to the left we have
+    		    'mode-line-modified
+    		    " | "
+    		    'mode-line-buffer-identification
+    		    
+    		; To the right we have
+    		    'mode-line-format-right-align
+    		    'mode-line-position
+  		    " | "
+  		    'my-mode-line-vc
+    		    "    "))
 #+end_src
+
+#+RESULTS:
+| %e | mode-line-modified |   |   | mode-line-buffer-identification | mode-line-format-right-align | mode-line-position |   |   | my-mode-line-vc |   |
 
 * Keybindings
 #+BEGIN_SRC emacs-lisp
@@ -121,23 +148,23 @@
 * Treemacs
 #+begin_src emacs-lisp
   (use-package treemacs
-    :ensure t
-    :defer t
-    :config
-    (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t)
-    (treemacs-fringe-indicator-mode 'always)
-    :bind
-    (:map global-map
-          ("M-0"       . treemacs-select-window)
-          ("C-x t t"   . treemacs)
-          ("C-x t d"   . treemacs-select-directory)
-          ("C-x t B"   . treemacs-bookmark)
-          ("C-x t C-t" . treemacs-find-file)))
+  :ensure t
+  :defer t
+  :config
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode 'always)
+  :bind
+  (:map global-map
+        ("M-0"       . treemacs-select-window)
+        ("C-x t t"   . treemacs)
+        ("C-x t d"   . treemacs-select-directory)
+        ("C-x t B"   . treemacs-bookmark)
+        ("C-x t C-t" . treemacs-find-file)))
 
-  (use-package treemacs-magit
-    :after (treemacs magit)
-    :ensure t)
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
 #+end_src
 * Consult
 #+begin_src emacs-lisp
@@ -240,7 +267,7 @@
     ;; Optionally make narrowing help available in the minibuffer.
     ;; You may want to use `embark-prefix-help-command' or which-key instead.
     ;; (keymap-set consult-narrow-map (concat consult-narrow-key " ?") #'consult-narrow-help)
-    )
+  )
 #+end_src
 
 * Vertico
@@ -276,21 +303,21 @@
   (use-package corfu
     :ensure t
     ;; Optional customizations
-    :custom
-    (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-    (corfu-auto t)
-    (corfu-auto-delay 0.1)
-    (corfu-auto-prefix 1)
-    ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-    ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-    ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-    ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-    ;; (corfu-on-exact-match 'insert) ;; Configure handling of exact matches
+  :custom
+  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  (corfu-auto t)
+  (corfu-auto-delay 0.1)
+  (corfu-auto-prefix 1)
+  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+  ;; (corfu-on-exact-match 'insert) ;; Configure handling of exact matches
 
-    ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
-    ;; :hook ((prog-mode . corfu-mode)
-    ;;        (shell-mode . corfu-mode)
-    ;;        (eshell-mode . corfu-mode))
+  ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
+  ;; :hook ((prog-mode . corfu-mode)
+  ;;        (shell-mode . corfu-mode)
+  ;;        (eshell-mode . corfu-mode))
 
   :hook
   (c++-mode . corfu-mode) 
@@ -301,10 +328,11 @@
   ;; Recommended: Enable Corfu globally.  Recommended since many modes provide
   ;; Capfs and Dabbrev can be used globally (M-/).  See also the customization
   ;; variable `global-corfu-modes' to exclude certain modes.
-    ;; Enable optional extension modes:
-    ;; (corfu-history-mode)
-    ;; (corfu-popupinfo-mode)
-    )
+
+  ;; Enable optional extension modes:
+  ;; (corfu-history-mode)
+  ;; (corfu-popupinfo-mode)
+  )
 
 #+end_src
 
@@ -323,7 +351,7 @@
     :ensure t
     :hook
     (org-mode . org-modern-mode)
-    )
+  )
 #+end_src
 
 * org roam
@@ -331,14 +359,13 @@
   (use-package org-roam
     :ensure t
     :config
-    (setq org-roam-directory (file-truename "d:/second_brain"))
+    (setq org-roam-directory (file-truename "~/.zuhitsu"))
     (org-roam-db-autosync-mode)
     :bind
     ("C-c n f" . org-roam-node-find)
     ("C-c n i" . org-roam-node-insert)
-    )
+  )
 #+end_src
-
 
 * PDF Tools
 #+begin_src emacs-lisp  

@@ -1,0 +1,13 @@
+auto-save-list/
+config.el
+eln-cache/
+elpaca/
+multisession/
+recentf
+tramp
+transient/
+url/
+projects
+.cache/
+org-persist/
+server/
