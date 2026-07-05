@@ -99,21 +99,18 @@
 #+END_SRC
 *** Mode Line Format
 #+begin_src emacs-lisp
-    (setq-default mode-line-format
-        	      (list "%e"
-    		; to the left we have
-    		    mode-line-modified
-    		    " | "
-    		    mode-line-buffer-identification
+  (setq-default mode-line-format
+      	      (list "%e"
+  		; to the left we have
+  		    mode-line-modified
+  		    " | "
+  		    mode-line-buffer-identification
 
-    		; To the right we have
-    		    'mode-line-format-right-align
-    		    vc-mode
+  		; To the right we have
+  		    'mode-line-format-right-align
+  		    'mode-line-position
   		    "    "))
 #+end_src
-
-#+RESULTS:
-| %e | (%1* %1+) |   |   | (%12b) | mode-line-format-right-align | Git:main |   |
 
 * Keybindings
 #+BEGIN_SRC emacs-lisp
@@ -346,7 +343,7 @@
 * PDF Tools
 #+begin_src emacs-lisp  
   (use-package pdf-tools
-    :ensure t
+    :ensure (:host github :repo "vedang/pdf-tools")
     :config
     (pdf-tools-install)
     (keymap-global-set "M-g g" #'pdf-view-goto-page))
@@ -357,6 +354,9 @@
     :config
     (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 #+end_src
+
+#+RESULTS:
+: [nil 27200 47617 259393 nil elpaca-process-queues nil nil 0 nil]
 
 * Magit
 #+begin_src emacs-lisp
