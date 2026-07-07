@@ -9,3 +9,6 @@ transient/
 url/
 projects
 org-roam.db
+.cache/
+.org-id-locations
+bookmarks

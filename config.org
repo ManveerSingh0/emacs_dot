@@ -73,28 +73,30 @@
 
 ** Emacs
 #+BEGIN_SRC emacs-lisp
-  (load-theme 'wombat t)
-  (which-key-mode 1)
-  (scroll-bar-mode -1) 
-  (menu-bar-mode -1)
-  (tool-bar-mode -1) 
+
+    (load-theme 'wombat t)
+    (which-key-mode 1)
+    (scroll-bar-mode -1) 
+    (menu-bar-mode -1)
+    (tool-bar-mode -1) 
 
 
-  (set-face-attribute 'default
-    		    nil
-    		    :height 130)
+    (set-face-attribute 'default
+      		    nil
+      		    :height 130)
 
 
-  (setq make-backup-files nil)
+    (setq make-backup-files nil)
 
-;; Set UTF-8 as the default coding system everywhere
-(prefer-coding-system       'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
+  (add-hook 'c++-mode-hook #'display-line-numbers-mode)
+  ;; Set UTF-8 as the default coding system everywhere
+  (prefer-coding-system       'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
 
-  (menu-bar--display-line-numbers-mode-relative)
-  (display-line-numbers-mode)
+    (menu-bar--display-line-numbers-mode-relative)
+    (display-line-numbers-mode)
 
 #+END_SRC
 
@@ -407,3 +409,14 @@
 #+end_src
 
 
+
+* Golden Ratio
+#+begin_src emacs-lisp
+      (use-package golden-ratio
+        :ensure (:host github :repo "roman/golden-ratio.el")
+        :config
+        (golden-ratio-mode 1))
+#+end_src
+
+#+RESULTS:
+: [nil 27213 16897 986442 nil elpaca-process-queues nil nil 452000 nil]
