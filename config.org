@@ -103,6 +103,21 @@
 #+RESULTS:
 : t
 
+*** Global Keybindings
+#+begin_src emacs-lisp
+      (use-package bind-key
+        :ensure t
+        :config
+        (bind-key "M-o" 'other-window))
+#+end_src
+
+#+RESULTS:
+: [nil 27215 43327 702076 nil elpaca-process-queues nil nil 366000 nil]
+
+*** Minor Mode
+#+begin_src emacs-lisp 
+
+#+end_src
 *** Mode Line Format
 #+begin_src emacs-lisp
 
