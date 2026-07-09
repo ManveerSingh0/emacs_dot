@@ -105,10 +105,10 @@
 
 *** Global Keybindings
 #+begin_src emacs-lisp
-      (use-package bind-key
-        :ensure t
-        :config
-        (bind-key "M-o" 'other-window))
+  (use-package bind-key
+    :ensure nil
+    :config
+    (bind-key "M-o" 'other-window))
 #+end_src
 
 #+RESULTS:
