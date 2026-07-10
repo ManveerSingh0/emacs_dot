@@ -359,7 +359,7 @@
   (use-package org-roam
     :ensure t
     :config
-    (setq org-roam-directory (file-truename "~/.zuhitsu"))
+    (setq org-roam-directory (file-truename "d:/second_brain/"))
     (org-roam-db-autosync-mode)
     :bind
     ("C-c n f" . org-roam-node-find)

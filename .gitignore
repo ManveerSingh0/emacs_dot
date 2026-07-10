@@ -11,3 +11,6 @@ projects
 .cache/
 org-persist/
 server/
+.org-id-locations
+bookmarks
+org-roam.db
