@@ -76,34 +76,51 @@
 
 ** Emacs
 #+BEGIN_SRC emacs-lisp
-  (load-theme 'wombat t)
-  (which-key-mode 1)
-  (scroll-bar-mode -1) 
-  (menu-bar-mode -1)
-  (tool-bar-mode -1) 
+
+    (load-theme 'wombat t)
+    (which-key-mode 1)
+    (scroll-bar-mode -1) 
+    (menu-bar-mode -1)
+    (tool-bar-mode -1) 
 
 
-  (set-face-attribute 'default
-    		    nil
-    		    :height 130)
+    (set-face-attribute 'default
+      		    nil
+      		    :height 130)
 
 
-  (setq make-backup-files nil)
+    (setq make-backup-files nil)
 
-;; Set UTF-8 as the default coding system everywhere
-(prefer-coding-system       'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
+  (add-hook 'c++-mode-hook #'display-line-numbers-mode)
+  ;; Set UTF-8 as the default coding system everywhere
+  (prefer-coding-system       'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
 
-  (menu-bar--display-line-numbers-mode-relative)
-  (display-line-numbers-mode)
+    (menu-bar--display-line-numbers-mode-relative)
+    (display-line-numbers-mode)
 
 #+END_SRC
 
 #+RESULTS:
 : t
 
+*** Global Keybindings
+#+begin_src emacs-lisp
+  (use-package bind-key
+    :ensure nil
+    :config
+    (bind-key "M-o" 'other-window))
+#+end_src
+
+#+RESULTS:
+: [nil 27215 43327 702076 nil elpaca-process-queues nil nil 366000 nil]
+
+*** Minor Mode
+#+begin_src emacs-lisp 
+
+#+end_src
 *** Mode Line Format
 #+begin_src emacs-lisp
 
@@ -411,4 +428,6 @@
     (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
     (add-hook 'elpaca-after-init-hook #'dashboard-open))
 #+end_src
+
+
 
