@@ -12,6 +12,8 @@
 - [X] Modern Org
 - [X] Org Roam
 - [X] Vertico
+
+
 * Elpaca
 #+BEGIN_SRC emacs-lisp
     (defvar elpaca-installer-version 0.12)
@@ -58,6 +60,7 @@
     (elpaca-use-package-mode))
 
   (elpaca-wait)
+  (elpaca-no-symlink-mode)
 #+END_SRC
 
 
@@ -373,7 +376,7 @@
   (use-package org-roam
     :ensure t
     :config
-    (setq org-roam-directory (file-truename "~/.zuhitsu"))
+    (setq org-roam-directory (file-truename "d:/second_brain/"))
     (org-roam-db-autosync-mode)
     :bind
     ("C-c n f" . org-roam-node-find)
@@ -384,7 +387,7 @@
 * PDF Tools
 #+begin_src emacs-lisp  
   (use-package pdf-tools
-    :ensure t
+    :ensure (:host github :repo "vedang/pdf-tools")
     :config
     (pdf-tools-install)
     (keymap-global-set "M-g g" #'pdf-view-goto-page))
@@ -395,6 +398,9 @@
     :config
     (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 #+end_src
+
+#+RESULTS:
+: [nil 27200 47617 259393 nil elpaca-process-queues nil nil 0 nil]
 
 * Magit
 #+begin_src emacs-lisp
