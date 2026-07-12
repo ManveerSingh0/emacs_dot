@@ -409,18 +409,21 @@
 
 * Dashboard
 #+begin_src emacs-lisp
-  (use-package dashboard
-    :ensure t
-    :config
-    (setq dashboard-startup-banner (cons "/home/manveer/Pictures/profile_photo/cat_drinking_coka_cola.png" "/home/manveer/Pictures/profile_photo/null.txt"))
-    (setq dashboard-image-banner-max-height 300)
-    (setq dashboard-footer-messages '(" "))
+      (use-package dashboard
+        :ensure t
+        :config
+        (setq dashboard-startup-banner (cons "/home/manveer/Pictures/profile_photo/cat_drinking_coka_cola.png" "/home/manveer/Pictures/profile_photo/null.txt"))
+        (setq dashboard-image-banner-max-height 300)
+        (setq dashboard-footer-messages '(" "))
+        (setq dashboard-icon-type 'all-the-icons)  ; use `all-the-icons' package
+        (setq dashboard-banner-logo-title "The world is a reflection of your state of thinking")
 
-    ;; don't call dashboard-setup-startup-hook here — it duplicates the hooks below
-    (setq initial-buffer-choice #'dashboard-open)
-    (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
-    (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
-    (add-hook 'elpaca-after-init-hook #'dashboard-open))
+
+        ;; don't call dashboard-setup-startup-hook here — it duplicates the hooks below
+        (setq initial-buffer-choice #'dashboard-open)
+        (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+        (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+        (add-hook 'elpaca-after-init-hook #'dashboard-open))
 #+end_src
 
 
