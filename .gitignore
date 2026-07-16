@@ -18,3 +18,4 @@ org-roam.db
 .cache/
 .org-id-locations
 bookmarks
+eshell/history

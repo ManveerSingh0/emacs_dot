@@ -376,7 +376,7 @@
   (use-package org-roam
     :ensure t
     :config
-    (setq org-roam-directory (file-truename "d:/second_brain/"))
+    (setq org-roam-directory (file-truename "~/.zuhitsu/"))
     (org-roam-db-autosync-mode)
     :bind
     ("C-c n f" . org-roam-node-find)
@@ -433,4 +433,12 @@
 #+end_src
 
 
+
+* Eshell
+#+begin_src emacs-lisp
+  (use-package exec-path-from-shell
+    :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+#+end_src
 

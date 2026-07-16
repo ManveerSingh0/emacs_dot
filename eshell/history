@@ -1,0 +1,7 @@
+sudo dnf install cmake 
+sudo dnf search libtools
+sudo dnf install libtool
+sudo dnf install libvterm-devel
+ls
+clear
+ls
